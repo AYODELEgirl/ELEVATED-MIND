@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@font-face {
+  font-family: regularFont;
+  src: url(../app/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Regular.otf) format("woff2");
+  font-display:swap;
+}
+@font-face{
+  font-family: mediumFont;
+  src: url(../app/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Medium.otf) format("woff2");
+  font-display:swap;
+}
+@font-face{
+  font-family: mediumItalic;
+  src: url(../app/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-MediumItalic.otf) format("woff2");
+  font-display:swap;
+}
+@font-face{
+  font-family: lightItalic;
+  src: url(../app/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-LightItalic.otf) format("woff2");
+  font-display:swap;
+}
+@font-face{
+  font-family: lightFont;
+  src: url(../app/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Light.otf) format("woff2");
+  font-display:swap;
+}
+@font-face{
+  font-family: italicFont;
+  src: url(../app/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Italic.otf) format("woff2");
+  font-display:swap;
+}
+@font-face{
+  font-family: BoldItalic;
+  src: url(../app/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-BoldItalic.otf) format("woff2");
+  font-display:swap;
+}\@font-face{
+  font-family: BoldFont;
+  src: url(../app/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Bold.otf) format("woff2");
+  font-display:swap;
+}
+
+
+.BoldFont{
+  font-family: BoldFont;
+}
+.BoldItalic{
+  font-family: BoldItalic;
+}
+.italicFont{
+  font-family: italicFont;
+}
+.lightFont{
+  font-family: lightFont;
+}
+.mediumItalic{
+  font-family: mediumItalic;
+}
+.mediumFont{
+  font-family: mediumFont;
+}
+.regularFont{
+  font-family: regularFont;
+}
+
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-family: regularFont;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
