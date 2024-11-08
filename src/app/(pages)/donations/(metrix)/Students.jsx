@@ -1,5 +1,5 @@
 import RandomComponent from "@/app/components/Reuseables/RandomComponent";
-import React from "react";
+import React, { useState } from "react";
 import lagosPrep from "../../../../assets/images/lagosPrep.png";
 import loyola from "../../../../assets/images/loyola.png";
 import treasure from "../../../../assets/images/treasure.png";
@@ -146,6 +146,12 @@ export default function Students({ setCurrentTab }) {
       headerOne: "",
     },
   ];
+  const tabs = [
+    { name: "Underpriviledged Students", num: "36" },
+    { name: "School profile" },
+    { name: "Donations" },
+  ];
+  // const [currentTab, setCurrentTab] = useState(tabs[0]?.name)
   return (
     <div>
       <div className="bg-[#F5F5F5] mx-4 p-4 rounded-md ">

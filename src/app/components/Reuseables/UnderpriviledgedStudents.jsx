@@ -48,8 +48,10 @@ export default function UnderpriviledgedStudents({
       nairaAmountTwo: "₦500,000.00",
       nairaAmountThree: "₦120,000.00",
       more: "See more about Olayinka",
-      number: "20"
+      number: "20",
+      Left : "Left"
     },
+    
   ];
   return (
     <div className="bg-[#F5F5F5] p-4 rounded-md w-[100%]">
