@@ -1,6 +1,10 @@
 import Image from "next/image";
 import { LiaLongArrowAltLeftSolid } from "react-icons/lia";
 import lagosPrep from "../../../../assets/images/lagosPrep.png";
+import { useState } from "react";
+import Underpriviledged from "./studentMetrix/Underpriviledged";
+import SchoolProfile from "./studentMetrix/SchoolProfile";
+import Donations from "./studentMetrix/Donations";
 export default function View() {
   const lagosPrepSupportedSchools = [
     {
@@ -21,11 +25,13 @@ export default function View() {
     },
   ];
   const tabs = [
-    {name: "Underprivileged Students",   num: "36"},
-    {name: "School profile"},
-    {name: "Donations"}
+    { name: "Underprivileged Students", num: "36" },
+    { name: "School profile", num: "12" },
+    { name: "Donations", num: "10" },
   ];
-  return ( 
+  const [currentTab, setCurrentTab] = useState(tabs[0]?.name);
+  console.log(currentTab);
+  return (
     <div className="text-[#F5F5F5]">
       <div className="bg-white rounded-md mt-4 mx-4  p-4">
         <div className="flex justify-between">
@@ -69,9 +75,47 @@ export default function View() {
             );
           })}
         </div>
-       <div>
-        
-       </div>
+
+        <div className="flex items-center gap-[2rem] mt-9">
+          {tabs.map((e, i) => {
+            const isActive = currentTab === e?.name;
+            const tabClass = isActive
+              ? "border-b-[1px] border-[#F5105C] text-primary font-[800]"
+              : "border-b-[1px] border-transparent";
+            const textClass = isActive
+              ? "text-[#F5105C] font-normal"
+              : "text-[#667085] font-normal";
+
+            return (
+              <div
+                key={i}
+                aria-selected={isActive}
+                className={tabClass}
+                onClick={() => setCurrentTab(e?.name)}
+              >
+                <div className={`cursor-pointer flex gap-1 ${textClass}`}>
+                  {e?.name}
+                  {isActive && (
+                    <div className="bg-primary text-white font-[700] flex justify-center items-center text-[.6rem] rounded-full h-[22px] w-[22px]">
+                      {e?.num}
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+          {/* <Underpriviledged /> */}
+        </div>
+
+        <section className="mt-4">
+          {currentTab === "Underprivileged Students" ? (
+            <Underpriviledged />
+          ) : currentTab === "School profile" ? (
+            <SchoolProfile />
+          ) : (
+            <Donations />
+          )}
+        </section>
       </div>
     </div>
   );

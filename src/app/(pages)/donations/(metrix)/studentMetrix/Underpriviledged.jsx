@@ -1,0 +1,40 @@
+import UnderpriviledgedStudents from "@/app/components/Reuseables/UnderpriviledgedStudents";
+import React from "react";
+
+export default function Underpriviledged() {
+  const lessPriviledged = [
+    {
+      Initials: "OA",
+      studentName: "Olayinka Akindele",
+      studentClass: " S. S. S 1",
+      donate: "Donate to Olayinka",
+      progress: "Donation Progress",
+      amountDonated: " ₦47,250.00 Donated",
+      amountDonatedTwo: "from ₦150,000.00 Donation",
+      age: "Age",
+      ageNumber: "13",
+      fees: "School fees",
+      feesAmount: "₦250,000",
+      performance: "Average performance",
+      grade: "Excellent",
+      Raised: "Raised",
+      naira: "₦",
+      nairaAmount: "180,000.00",
+      Goals: "Goals",
+      nairaAmountTwo: "₦500,000.00",
+      nairaAmountThree: "₦120,000.00",
+      more: "See more about Olayinka",
+    },
+  ];
+
+  return (
+    <div>
+      <div className="border border-t-gray-200 mt-3 w-full"></div>
+      <div className="mt-5 grid grid-cols-4 gap-5">
+        {lessPriviledged.map((e, i) => (
+          <UnderpriviledgedStudents key={i} {...e} />
+        ))}
+      </div>
+    </div>
+  );
+}

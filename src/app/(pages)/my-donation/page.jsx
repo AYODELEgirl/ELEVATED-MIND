@@ -45,7 +45,7 @@ function page() {
               >
                 <div>{e?.name}</div>
                 {currentTab === e?.name && (
-                  <div className="bg-primary text-white font-[700] flex justify-center items-center tex-[1rem] ro+++unded-full h-[28px] w-[28px]">
+                  <div className="bg-primary text-white font-[700] flex justify-center items-center text-[1rem] ro+++unded-full h-[28px] w-[28px]">
                     {e?.num}
                   </div>
                 )}
