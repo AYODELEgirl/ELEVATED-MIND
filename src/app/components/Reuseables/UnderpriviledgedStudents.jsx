@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Progress } from "@arco-design/web-react";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function UnderpriviledgedStudents({
   amountDonated,
@@ -24,7 +26,8 @@ export default function UnderpriviledgedStudents({
   progress,
   studentName,
   studentClass,
-  Left
+  Left,
+  id,
 }) {
   const lessPriviledged = [
     {
@@ -49,10 +52,14 @@ export default function UnderpriviledgedStudents({
       nairaAmountThree: "₦120,000.00",
       more: "See more about Olayinka",
       number: "20",
-      Left : "Left"
+      Left: "Left",
     },
-    
   ];
+  const [currentTab, setCurrentTab] = useState();
+  const router = useRouter();
+
+  console.log("ID => ", id);
+
   return (
     <div className="bg-[#F5F5F5] p-4 rounded-md w-[100%]">
       <div className="flex gap-3">
@@ -139,7 +146,7 @@ export default function UnderpriviledgedStudents({
         className="flex gap-3 justify-center items-center mt-3"
         style={{ alignItems: "center" }}
       >
-        <p className="text-[#043259] ">{more} </p>
+        <Link href="/donations/studentProfile" className="text-[#043259]">{more}</Link>
         <MdKeyboardArrowRight className="text-[#043259] size-5" />
       </div>
     </div>

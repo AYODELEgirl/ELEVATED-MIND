@@ -22,6 +22,7 @@ export default function Donation() {
               {tabs.map((e, i) => {
                 return (
                   <div
+                  key={i}
                     className={`${
                       currentTab === e?.name
                         ? "border-b-[2px] border-[#F5105C] text-primary  font-[800]"

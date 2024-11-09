@@ -2,9 +2,10 @@ import Image from "next/image";
 import { LiaLongArrowAltLeftSolid } from "react-icons/lia";
 import lagosPrep from "../../../../assets/images/lagosPrep.png";
 import { useState } from "react";
-import Underpriviledged from "./studentMetrix/Underpriviledged";
+// import Underpriviledged from "./studentMetrix/Underpriviledged";
 import SchoolProfile from "./studentMetrix/SchoolProfile";
 import Donations from "./studentMetrix/Donations";
+import UnderPriv from "./studentMetrix/Underpriviledged";
 export default function View() {
   const lagosPrepSupportedSchools = [
     {
@@ -66,7 +67,7 @@ export default function View() {
         <div className="flex gap-4 mt-4">
           {lagosPrepSupportedSchools.map((e, i) => {
             return (
-              <div className="border border-[#EAECF0] rounded-lg p-3 w-[20%] ">
+              <div key={i} className="border border-[#EAECF0] rounded-lg p-3 w-[20%] ">
                 <p className="text-[#667085] text-[12px]">{e.text}</p>
                 <p className="text-[#141414] font-semibold text-[17px]">
                   {e.amount}
@@ -109,7 +110,7 @@ export default function View() {
 
         <section className="mt-4">
           {currentTab === "Underprivileged Students" ? (
-            <Underpriviledged />
+            <UnderPriv />
           ) : currentTab === "School profile" ? (
             <SchoolProfile />
           ) : (

@@ -279,7 +279,7 @@ function OverView() {
               </div>
             ))}
           </div>
-          <Link href="/donations" className="z-50 bg-primary  cursor-pointer text-white w-fit font-[700] text-[.9rem] px-4 py-3 rounded-[.4rem]">
+          <Link href="/donations" className="z-40 bg-primary  cursor-pointer text-white w-fit font-[700] text-[.9rem] px-4 py-3 rounded-[.4rem]">
           Make a donation
           </Link>
         </div>
