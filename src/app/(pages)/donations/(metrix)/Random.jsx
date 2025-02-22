@@ -7,19 +7,19 @@ import bank from "../../../../assets/icons/overview/bank.png";
 import Image from "next/image";
 export default function Random() {
   const membership = [
-    { rank: "Enty level" },
-    { rank: "Mid-Level" },
-    { rank: "Top-Tier" },
-    { rank: "Executive" },
-    { rank: "Just once" },
-    { rank: "Patron" },
+    { rank: "Enty level", id: 1 },
+    { rank: "Mid-Level", id: 2 },
+    { rank: "Top-Tier", id: 3 },
+    { rank: "Executive", id: 4 },
+    { rank: "Just once", id: 0 },
+    { rank: "Patron", id: 5 },
   ];
   const specifiedAmount = [
-    { amount: "₦1,000.00" },
-    { amount: "₦2,000.00" },
-    { amount: "#3,000.00" },
-    { amount: "₦4,000.00" },
-    { amount: "₦5,000.00" },
+    { amount: "₦1,000.00", id: 1 },
+    { amount: "₦2,000.00", id: 2 },
+    { amount: "#3,000.00", id: 3 },
+    { amount: "₦4,000.00", id: 4 },
+    { amount: "₦5,000.00", id: 5 },
   ];
   const durationTime = [
     { howOften: "Monthly" },
@@ -35,8 +35,8 @@ export default function Random() {
     { dedicate: "In Memory of" },
     { dedicate: "In Honor of" },
   ];
-  const [member, setMember] = useState(membership[0]?.rank);
-  const [amount, setAmount] = useState(specifiedAmount[0]?.amount);
+  const [member, setMember] = useState(membership[0]?.id);
+  const [amount, setAmount] = useState(specifiedAmount[0]?.id);
   const [duration, setDuration] = useState(durationTime[0]?.howOften);
   const [dedicating, setDedicating] = useState(dedicationType[0]?.dedicate);
   const [payment, setPayment] = useState(transfer[0]?.name);
@@ -68,11 +68,14 @@ export default function Random() {
                 <div
                   key={i}
                   className={`py-2 px-5 mt-4 cursor-pointer ${
-                    member === e?.rank
+                    member === e?.id
                       ? "bg-[#043259] rounded-md text-white text-[13px]"
                       : "border border-[#F5105C]  text-[#F5105C] rounded-lg"
                   }`}
-                  onClick={() => setMember(e?.rank)}
+                  onClick={() => {
+                    setMember(e?.id);
+                    setAmount(e?.id);
+                  }}
                 >
                   {e.rank}
                 </div>
@@ -96,7 +99,7 @@ export default function Random() {
                 <div
                   key={i}
                   className={` py-2 px-5 cursor-pointer mt-4  rounded-md  ${
-                    amount === e?.amount
+                    amount === e?.id
                       ? "bg-[#04325980] text-white"
                       : "bg-white text-[#F5105C80] border border-[#F5105C80]"
                   }`}
@@ -187,7 +190,7 @@ export default function Random() {
           </div>
         </div>
         <div className="rounded-lg shadow-lg">
-        <section className="mt-4">
+          <section className="mt-4">
             <RandomComponent
               first={"Hero & Tax Receipt Information"}
               second={

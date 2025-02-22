@@ -146,7 +146,9 @@ export default function UnderpriviledgedStudents({
         className="flex gap-3 justify-center items-center mt-3"
         style={{ alignItems: "center" }}
       >
-        <Link href="/donations/studentProfile" className="text-[#043259]">{more}</Link>
+        <Link href="/donations/studentProfile" className="text-[#043259]">
+          {more}
+        </Link>
         <MdKeyboardArrowRight className="text-[#043259] size-5" />
       </div>
     </div>

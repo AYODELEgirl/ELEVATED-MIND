@@ -50,7 +50,6 @@ function Navbar() {
           </Link>
         ))}
       </div>
-
       <div className="text-white flex items-center gap-8 p-4 relative">
         <div className="cursor-pointer">
           <FaRegBell size={25} />
@@ -67,15 +66,33 @@ function Navbar() {
           </div>
           {isModalOpen && (
             <div
-            style={{zIndex:"999888"}}
-              className="absolute right-0 top-12 bg-red-500 text-white p-6 rounded-md shadow-lg w-64" // Set z-10 here
+              style={{ zIndex: "999888" }}
+              className="absolute right-0 top-12 bg-white text-white p-6 rounded-md shadow-lg w-64" // Set z-10 here
               onClick={closeModal} // Close modal when clicking outside
             >
               <div className="modal-content">
-                <h2 className="font-semibold text-lg mb-4">Settings</h2>
+                <div className="flex gap-2">
+                  <div>
+                    <div className="rounded-full text-lg text-[#043259] bg-[#E4E4E4] p-2 w-12 h-12 flex justify-center items-center">
+                      MB
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <p className="text-[#043259] text-[14px]">
+                      Mayowa Babatunde
+                    </p>
+                    <p className="text-[12px] text-[#043259] ">Hero</p>
+                  </div>
+                </div>
+                <Link
+                  href="/settings"
+                  className="text-xs text-white bg-gray-700 hover:bg-gray-600 p-1 rounded  mt-4"
+                >
+                  Settings
+                </Link>{" "}
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between items-center">
-                    <span>Notification Preferences</span>
+                    {/* <span>Notification Preferences</span>
                     <button className="text-xs text-white bg-gray-700 hover:bg-gray-600 p-1 rounded">
                       Edit
                     </button>
@@ -84,23 +101,19 @@ function Navbar() {
                     <span>Privacy Settings</span>
                     <button className="text-xs text-white bg-gray-700 hover:bg-gray-600 p-1 rounded">
                       Edit
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
 
-              <div className="modal-content mt-4">
+              {/* <div className="modal-content mt-4">
                 <h2 className="font-semibold text-lg mb-4">Contents</h2>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between items-center">
                     <span>Account Details</span>
-                    <Link  href= "/settings"className="text-xs text-white bg-gray-700 hover:bg-gray-600 p-1 rounded">
-                     Settings
-                    </Link>
                   </div>
-
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex justify-end mt-6">
                 <button

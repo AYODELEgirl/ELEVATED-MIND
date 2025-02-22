@@ -68,9 +68,12 @@ function SecondInputs({
         </select>
       </div>
 
-      <div className="w-[25%] border border-gray-300 flex items-center text-gray-700 rounded-lg px-2">
-        <div>Students Supported:</div>
-        <div className="ps-1">1 -</div>
+      <div className="w-[25%] border border-gray-300 flex text-gray-700 rounded-lg px-2">
+        {/* <div className="flex gap-3">
+
+        </div> */}
+        <div className="flex items-center">Students Supported:</div>
+        {/* <div className="ps-1"></div> */}
         <select
           onChange={(e) => setStudentSupportedValue(e?.target.value)}
           className="w-fit py-2  text-gray-700 "

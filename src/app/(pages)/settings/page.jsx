@@ -2,13 +2,15 @@
 import React, { useState } from "react";
 import SecondLayout from "@/app/components/NavLayouts/SecondLayout";
 import Header from "@/components/Templates/Header";
+import LockIcon from "../../../assets/images/LockIcon.png";
 import Link from "next/link";
 import notify from "../../../assets/images/notify.png";
-import Lock from "../../../assets/images/Lock.png";
 import profile from "../../../assets/images/profile.png";
-// import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
+import Profile from "./Profile";
+import Notification from "./Notification";
+import Lock from "./Lock";
 
 export default function page() {
   const select = [
@@ -18,9 +20,13 @@ export default function page() {
       text: "Notification Settings",
       icon: <MdKeyboardArrowRight />,
     },
-    { img: Lock, text: "Privacy & Security", icon: <MdKeyboardArrowRight /> },
+    {
+      img: LockIcon,
+      text: "Privacy & Security",
+      icon: <MdKeyboardArrowRight />,
+    },
   ];
-  const [currentTab, setCurrentTab] = useState(select[0]?.name);
+  const [currentTab, setCurrentTab] = useState(select[0]?.text);
 
   return (
     <div>
@@ -49,41 +55,56 @@ export default function page() {
             Profile Settings<span className="text-[#F5105C]">*</span>
           </p>
           <div className="border border-t-gray-50 mt-3 w-[100%]"></div>
-          <div className="flex  flex-col items-center gap-3 border border-[#E4E7EC] mt-4 w-fit rounded-lg text-start">
-            <p className="text-[12px] mt-2 text-[#5F5F67CC]">SELECT MENU</p>
+          <div className = "w-full  items-start flex gap-7">
+
+          <div className="flex  flex-col gap-3 border border-[#E4E7EC] mt-4 p-4 w-[23%] rounded-lg text-start">
+            <p className="text-[12px] mt-2 text-[#5F5F67CC] text-start">
+              SELECT MENU
+            </p>
+
             {select?.map((e, i) => {
-  return (
-    <div
-      key={i}
-      className={`text-[#667185] flex items-center justify-between items-center gap-3 pb-3 transition-all cursor-pointer px-5 ${
-        currentTab === e?.text
-          ? "bg-[#04325926] text-primary font-semibold rounded-md" // Active state with background
-          : "hover:bg-[#04325926] rounded-md" // Hover effect for non-active tabs
-      }`}
-      onClick={() => setCurrentTab(e?.text)} // Set the current tab when clicked
-    >
-      {/* Image with centering styles */}
-      <Image
-        src={e?.img}
-        alt={e?.text} // Add alt text for accessibility
-        width={20} // You can adjust width and height as needed
-        // height={50} // Ensure this is a square for uniformity
-        className="flex-shrink-0" // Prevent image from shrinking if container is resized
-      />
-      
-      <p>{e?.text}</p>
+              return (
+                <div
+                  key={i}
+                  className={`text-[#667185] flex gap-3 items-center pb-3 transition-all cursor-pointer px-5 ${
+                    currentTab === e?.text
+                      ? "bg-[#04325926] text-primary font-semibold rounded-md p-2"
+                      : "hover:bg-[#04325926] rounded-md"
+                  }`}
+                  onClick={() => setCurrentTab(e?.text)}
+                >
+                  <div className="flex items-center  p-1">
+                    <Image
+                      src={e?.img}
+                      alt={e?.text}
+                      width={20}
+                      height={20}
+                      className="flex-shrink-0"
+                    />
+                  </div>
 
-      {/* Show icon for active tab */}
-      {currentTab === e?.text && (
-        <div className="bg-primary rounded-full text-white font-semibold flex justify-center items-center text-[1rem] h-[20px] w-[20px]">
-          {e?.icon}
-        </div>
-      )}
-    </div>
-  );
-})}
+                  <p className="text-center">{e?.text}</p>
 
+                  {currentTab === e?.text && (
+                    <div className="bg-primary rounded-full text-white font-semibold flex justify-center items-center text-[1rem] h-[15px] w-[15px]">
+                      {e?.icon}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
+          <section className="mx-4  p-4">
+            {currentTab === "Profile Settings" ? (
+              <Profile />
+            ) : currentTab === "Notification Settings" ? (
+              <Notification />
+            ) : (
+              <Lock />
+            )}
+          </section>
+          </div>
+
         </div>
       </div>
     </div>

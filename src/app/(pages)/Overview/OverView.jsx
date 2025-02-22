@@ -230,18 +230,18 @@ function OverView() {
               <div>
                 <Image src={hero} alt="logo" width={140} height={140} />
               </div>
-              <div>
+              <div className="">
                 <Header
                   header="Be a Hero: Empowering Futures, More Students at a Time"
                   text="Your Generosity Transforms Lives: Thank You for Being a Hero to Students in Need"
-                  classNames="text-[1.5rem] w-[70%]"
+                  classNames="text-[1.5rem] w-[70%] "
                 />
               </div>
             </div>
           </aside>
 
           {/* Second Column */}
-          <aside className="flex justify-between items-center border-l ps-4">
+          <aside className="flex z-[-10] justify-between items-center border-l ps-4">
             {navData?.map((e, i) => (
               <div key={i} className="flex items-center gap-2 p-2">
                 <div>
@@ -279,8 +279,11 @@ function OverView() {
               </div>
             ))}
           </div>
-          <Link href="/donations" className="z-40 bg-primary  cursor-pointer text-white w-fit font-[700] text-[.9rem] px-4 py-3 rounded-[.4rem]">
-          Make a donation
+          <Link
+            href="/donations"
+            className="z-40 bg-primary  cursor-pointer text-white w-fit font-[700] text-[.9rem] px-4 py-3 rounded-[.4rem]"
+          >
+            Make a donation
           </Link>
         </div>
 
@@ -329,32 +332,7 @@ function OverView() {
             </p>
           </div>
           <div className="border border-t-gray-50 mt-3 w-[100%]"></div>
-          <table className="mt-5 border border-[#1A1A1A26] w-full rounded-lg px-4">
-            <thead>
-              <tr className="bg-gray-200 w-full ">
-                {headers.map((e, i) => {
-                  return (
-                    <th
-                      className={`${
-                        i === 0 ? "px-3" : "px-0"
-                      }  py-[.4rem] text-[11px]  text-[#687182] font-normal`}
-                      key={i}
-                    >
-                      <div className="flex items-center">
-                        <div> {e.headerOne}</div>
-
-                        {e?.headerOne && (
-                          <div>
-                            <TiArrowUnsorted size={11} />
-                          </div>
-                          // line 345 code means the icons is only going to display where there is header, withoutt this code the icon is also displaying for the "view" column, meanwhile the view column has no header
-                        )}
-                      </div>
-                    </th>
-                  );
-                })}
-              </tr>
-            </thead>
+          <table>
             <tbody>
               {SupportedSchools.map((e, i) => {
                 return (
@@ -395,10 +373,13 @@ function OverView() {
                         percent={e?.progress}
                         showText={false}
                         color="#00984C"
+                        className=""
                         style={{
                           marginBottom: "15px",
                           width: "90%",
                           marginTop: "0px",
+                          position: "relative", // ✅ Keeps it above other elements
+                          zIndex: 10, // ✅ Ensures it stays on top
                         }}
                       />
                     </td>

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function SecondLayout({ children, ShowBack, classNames }) {
   return (
-   <div className={`sticky top-[70px] ${classNames}`}>
+   <div className={`sticky top-[70px] z-[99] ${classNames}`}>
      <div
       className="bg-white mx-4 px-6 relative  z-[100]"
       style={{ borderRadius: "1.5rem 1.5rem 0 0 " }}
