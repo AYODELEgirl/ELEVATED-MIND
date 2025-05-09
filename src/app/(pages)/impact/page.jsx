@@ -20,7 +20,7 @@ import Certificate from "./(metrix)/Certificate";
 import Impact from "./(metrix)/Impact";
 import ImpactChart from "@/app/components/Charts/ImpactChart";
 
-function Page() {
+function ImpactPage() {
   const tabs = [
     { name: "Students Supported" },
     { name: "Certificate Of Achievment" },
@@ -265,4 +265,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default ImpactPage;

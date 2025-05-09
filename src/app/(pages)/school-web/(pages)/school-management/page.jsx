@@ -8,7 +8,6 @@ import { CiSearch } from "react-icons/ci";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { TiArrowUnsorted } from "react-icons/ti";
 import { useRouter } from "next/navigation";
-
 function Page() {
   const headers = [
     {
@@ -102,29 +101,22 @@ function Page() {
       dob: "19 - 05 - 2011",
     },
   ];
-
   const [gender, setGender] = useState("");
   const [selectedClass, setSelectedClass] = useState("");
   const [selectedAgeRange, setSelectedAgeRange] = useState("");
-
   const router = useRouter();
-
   const handleViewClick = (item) => {
     router.push(`/school-web/school-management/${item}`);
   };
-
   const handleGenderChange = (e) => {
     setGender(e.target.value);
   };
-
   const handleClassChange = (e) => {
     setSelectedClass(e.target.value);
   };
-
   const handleSelectedAgeRange = (e) => {
     setSelectedAgeRange(e.target.value);
   };
-
   return (
     <div className="w-full">
       <Navbars text={"Student Management"} img={studentIcon} />

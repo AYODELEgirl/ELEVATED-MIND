@@ -14,8 +14,6 @@ function Page() {
     setShowPassword(!showPassword);
   };
 
-
-
   const router = useRouter(); // Initialize the router
 
   // Handle Sign Up click and navigate to the 'signin' page

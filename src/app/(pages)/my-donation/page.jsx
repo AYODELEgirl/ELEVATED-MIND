@@ -6,7 +6,7 @@ import Ongoing from "./(metrix)/Ongoing";
 import Upcoming from "./(metrix)/Upcoming";
 import Completed from "./(metrix)/Completed";
 import Link from "next/link";
-function Page() {
+const MyDonationPage = () => {
   const tabs = [
     { name: "Ongoing Donation", num: 6 },
     { name: "Completed Donation", num: 4 },
@@ -68,4 +68,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default MyDonationPage;
