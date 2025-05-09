@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BarChart,
   Bar,
@@ -9,8 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import { Chart, ArcElement} from 'chart.js'
-import { Doughnut } from "react-chartjs-2";
+import { Chart, ArcElement } from "chart.js";
 import SecondLayout from "@/app/components/NavLayouts/SecondLayout";
 import Header from "@/components/Templates/Header";
 import date from "../../../assets/icons/overview/date.png";
@@ -19,13 +18,25 @@ import Supported from "./(metrix)/Supported";
 import Certificate from "./(metrix)/Certificate";
 import Impact from "./(metrix)/Impact";
 import ImpactChart from "@/app/components/Charts/ImpactChart";
-
 function ImpactPage() {
+  
   const tabs = [
     { name: "Students Supported" },
     { name: "Certificate Of Achievment" },
     { name: "Impact Reflection" },
   ];
+
+  const [isClient, setIsClient] = useState(false);
+  const [currentTab, setCurrentTab] = useState(tabs[0]?.name || "");
+
+  useEffect(() => {
+    setIsClient(true); // This will run on the client side only
+  }, []);
+
+  if (!isClient) {
+    return null; // or a loading spinner, or a fallback for server-side
+  }
+
   Chart.register(ArcElement);
   const piData = {
     labels: ["Primary", "Secondary"],
@@ -43,7 +54,6 @@ function ImpactPage() {
     circumference: Math.PI,
     plugins: { legend: { display: false } },
   };
-  const [currentTab, setCurrentTab] = useState(tabs[0]?.name);
 
   const Calenderdate = [
     {
@@ -52,7 +62,6 @@ function ImpactPage() {
       textTwo: "May 6 2024 - May 17 2024",
     },
   ];
-
   const reportsDonations = [
     {
       text: "Total Donations Received",
@@ -71,7 +80,6 @@ function ImpactPage() {
       amount: "967",
     },
   ];
-
   const data = [
     { name: "May 6", x: 30, y: 70, m: "0" },
     { name: "May 7", x: 12, y: 88, m: "1H" },
@@ -86,7 +94,6 @@ function ImpactPage() {
     { name: "May 16", x: 32, y: 68 },
     { name: "May 17", x: 32, y: 68 },
   ];
-
   return (
     <div>
       <SecondLayout ShowBack={true}>
@@ -182,51 +189,7 @@ function ImpactPage() {
                   See the distribution of students by school level
                 </p>
                 <div className="border border-t-gray-50 mt-3 w-[100%]"></div>
-                {/* <div>
-                  <div style={{ textAlign: "center" }}>
-                    {" "}
-                    <Doughnut data={piData} options={options} />{" "}
-                    <div style={{ position: "relative", top: "-140px" }}>
-                      {" "}
-                      <h2>Total Students Supported</h2> <h1>54</h1>{" "}
-                    </div>{" "}
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        marginTop: "20px",
-                      }}
-                    >
-                      {" "}
-                      <div style={{ marginRight: "20px", textAlign: "center" }}>
-                        {" "}
-                        <div
-                          style={{
-                            backgroundColor: "#000080",
-                            width: "10px",
-                            height: "10px",
-                            display: "inline-block",
-                            marginRight: "5px",
-                          }}
-                        ></div>{" "}
-                        <span>Primary</span> <h3>21</h3>{" "}
-                      </div>{" "}
-                      <div style={{ textAlign: "center" }}>
-                        {" "}
-                        <div
-                          style={{
-                            backgroundColor: "#FF1493",
-                            width: "10px",
-                            height: "10px",
-                            display: "inline-block",
-                            marginRight: "5px",
-                          }}
-                        ></div>{" "}
-                        <span>Secondary</span> <h3>33</h3>{" "}
-                      </div>{" "}
-                    </div>{" "}
-                  </div>
-                </div> */}
+
                 <ImpactChart />
               </div>
             </div>
