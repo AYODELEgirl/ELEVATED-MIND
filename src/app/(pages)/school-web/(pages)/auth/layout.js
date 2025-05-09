@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Overview from "../../../../../assets/images/OverView.png";
+import Overview from "../../../../../assets/images/Overview.png";
 
 export default function Layout({ children }) {
   return (

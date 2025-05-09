@@ -1,7 +1,5 @@
 "use client";
-
 import { Progress } from "@arco-design/web-react";
-
 export default function CardsTwo() {
   return (
     <div className="bg-[#F5F5F5] p-4 rounded-md w-fit">
@@ -57,10 +55,14 @@ export default function CardsTwo() {
           </div>
           <div className="flex flex-col gap-1 border-r border-l px-2 border-gray-200">
             <p className="text-[#858585] text-[12px]">Due Date</p>
-            <p className="text-[#043259] text-[14px] whitespace-nowrap">5th Feb 2025</p>
+            <p className="text-[#043259] text-[14px] whitespace-nowrap">
+              5th Feb 2025
+            </p>
           </div>
           <div className="flex flex-col gap-1">
-            <p className="text-[#858585] text-[12px] whitespace-nowrap">Donation Amount</p>
+            <p className="text-[#858585] text-[12px] whitespace-nowrap">
+              Donation Amount
+            </p>
             <p className="text-[#043259] text-[14px]">₦1,000.00</p>
           </div>
         </div>

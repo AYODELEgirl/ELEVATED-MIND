@@ -6,13 +6,15 @@ import Frame from "../../../assets/icons/overview/Frame.png";
 import Elevated from "../../../assets/icons/overview/Elevated.png";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
-import Overview from "../../../assets/images/OverView.png";
+import Overview from "../../../assets/images/Overview.png"; // Adjust the path as necessary
 
 function Page() {
   const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+
 
   const router = useRouter(); // Initialize the router
 
