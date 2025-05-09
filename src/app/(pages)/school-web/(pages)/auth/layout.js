@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Overview from "../../../../../assets/images/OverView.png";
 
-export default function layout({ children }) {
+export default function Layout({ children }) {
   return (
     <div className="grid grid-cols-2 gap-3 p-3">
       <div className="">{children}</div>

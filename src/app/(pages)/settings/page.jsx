@@ -12,7 +12,7 @@ import Profile from "./Profile";
 import Notification from "./Notification";
 import Lock from "./Lock";
 
-export default function page() {
+export default function Page() {
   const select = [
     { img: profile, text: "Profile Settings", icon: <MdKeyboardArrowRight /> },
     {

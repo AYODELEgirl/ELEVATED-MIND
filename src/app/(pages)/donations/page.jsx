@@ -45,8 +45,8 @@ export default function Donation() {
             </div>
           </div>
           <div className="flex">
-            <Image src={thankYou} width={120} />
-            <Image src={kidss} width={500} />
+            <Image src={thankYou} width={120}  alt=""/>
+            <Image src={kidss} width={500} alt="" />
           </div>
         </div>
       </div>

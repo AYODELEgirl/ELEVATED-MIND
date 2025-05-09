@@ -11,7 +11,7 @@ import Academic from "./(metrix)/Academic";
 import Financial from "./(metrix)/Financial";
 import Supporting from "./(metrix)/Supporting";
 
-function page() {
+function Page() {
   const [enabled, setEnabled] = useState({
     first: false,
   });
@@ -95,4 +95,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

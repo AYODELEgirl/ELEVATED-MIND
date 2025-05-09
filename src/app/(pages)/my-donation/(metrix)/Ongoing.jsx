@@ -157,7 +157,7 @@ function Ongoing() {
       <div className="border border-t-gray-50 mt-3 w-[100%]"></div>
       <div className="mt-5 grid grid-cols-4 gap-5">
         {ongoingData.map((e, i) => {
-          return <OngoingDonation {...e} />;
+          return <OngoingDonation {...e}  key={i}/>;
         })}
       </div>
     </div>

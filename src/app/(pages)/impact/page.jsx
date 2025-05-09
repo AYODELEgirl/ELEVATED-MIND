@@ -146,7 +146,7 @@ function Page() {
                           className="flex items-center justify-center gap-2"
                         >
                           <p className="text-[12px] text-[#344054]">{e.text}</p>
-                          <Image src={e.img} className="w-[.7rem]" />
+                          <Image src={e.img} className="w-[.7rem]" alt="" />
                           <p className="text-[12px] text-[#344054]">
                             {e.textTwo}
                           </p>

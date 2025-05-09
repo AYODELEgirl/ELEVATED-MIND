@@ -13,7 +13,7 @@ function SecondLayout({ children, ShowBack, classNames }) {
      
       {ShowBack && (
         <div className="absolute right-0 top-0">
-          <Image src={back1} width={350} />
+          <Image src={back1} width={350}  alt="" />
         </div>
       )}
     </div>

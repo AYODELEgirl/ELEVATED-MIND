@@ -6,7 +6,7 @@ import { useState } from "react";
 import Profile from "./{metrix)/Profile";
 import Notification from "./{metrix)/Notification";
 import Privacy from "./{metrix)/Privacy";
-function page() {
+function Page() {
   const tabs = [
     { name: "School Profile" },
     { name: "Notification settings" },
@@ -58,4 +58,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

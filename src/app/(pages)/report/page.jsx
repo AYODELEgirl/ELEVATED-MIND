@@ -12,7 +12,7 @@ import lePoshe from "../../../assets/images/lePoshe.png";
 import loyola from "../../../assets/images/loyola.png";
 import { TiArrowUnsorted } from "react-icons/ti";
 
-function page() {
+function Page() {
   const [donationStatusValue, setDonationStatusValue] = useState("");
   const [schoolTypeValue, setSchoolTypeValue] = useState("");
   const [searchValue, setSearchValue] = useState("");
@@ -275,4 +275,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

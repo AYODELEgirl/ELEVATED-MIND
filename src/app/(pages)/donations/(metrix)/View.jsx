@@ -54,7 +54,7 @@ export default function View() {
         <div className="border border-t-gray-50 mt-3 w-[100%]"></div>
         <div className="bg-[#D6EAFB80] p-4 rounded-md mt-3">
           <div className="flex flex-col gap-3">
-            <Image src={lagosPrep} width={40} />
+            <Image src={lagosPrep} width={40}  alt=""/>
             <p className="text-[20px] font-semibold text-[#101828]">
               Lagos Preparatory
             </p>

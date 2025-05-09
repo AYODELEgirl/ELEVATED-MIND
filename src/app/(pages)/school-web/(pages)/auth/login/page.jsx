@@ -32,8 +32,8 @@ function Login() {
     <div>
         <div className=" p-20 border border-gray-300 rounded-2xl shadow-lg shadow-gray-500/50 hover:shadow-2xl transition-all duration-300">
           <div className="flex items-center gap-4">
-            <Image src={Frame} width={30} />
-            <Image src={Elevated} width={150} />
+            <Image src={Frame} width={30} alt="" />
+            <Image src={Elevated} width={150} alt="" />
           </div>
           <div className="mt-24">
             <p className="text-[#0B090A] text-[27px] font-bold">

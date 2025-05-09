@@ -20,7 +20,7 @@ function Need() {
 
       </div>
       <div className="border-t-0 border border-gray-200 w-[50%] rounded-sm p-3">
-         <p className="text-[12px] text-[#043259] mt-2">With rising expenses and her mother's limited income, Olayinka's family is struggling to afford her school fees. Her younger brother also needs medical care, adding financial pressure. Without assistance, Sarah risks dropping out of school.</p>
+         <p className="text-[12px] text-[#043259] mt-2">With rising expenses and her mother&apos;s limited income, Olayinka&apos;s family is struggling to afford her school fees. Her younger brother also needs medical care, adding financial pressure. Without assistance, Sarah risks dropping out of school.</p>
       </div>
     </div>
   );

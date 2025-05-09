@@ -6,7 +6,7 @@ import All from './(metrix)/All';
 import Update from './(metrix)/Update';
 import Transaction from './(metrix)/Transaction';
 import { useState } from 'react';
-function page() {
+function Page() {
    const tabs = [
       { name: "All" },
       { name: "Update" },
@@ -55,4 +55,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

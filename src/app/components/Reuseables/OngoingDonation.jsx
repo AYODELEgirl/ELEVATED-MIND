@@ -27,7 +27,7 @@ export default function OngoingDonation({
   return (
     <div className="bg-[#F5F5F5] rounded-md w-[100%] p-4 mb-5 ">
       <div className="flex gap-2">
-        <Image src={img} width={50} />
+        <Image src={img} width={50}  alt=""/>
         <div className="flex flex-col gap-1">
           <p>{studentName}</p>
           <p className="bg-[#F5105C1A] text-[#F5105C] rounded-md text-[10px] p-1 w-fit">

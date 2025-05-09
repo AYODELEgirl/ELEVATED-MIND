@@ -132,7 +132,7 @@ function Upcoming() {
         {Calenderdate.map((e, i) => (
           <div key={i} className="flex items-center justify-center gap-2">
             <p className="text-[12px] text-[#344054]">{e.text}</p>
-            <Image src={e.img} className="w-[.7rem]" />
+            <Image src={e.img} className="w-[.7rem]" alt='' />
             <p className="text-[12px] text-[#344054]">{e.textTwo}</p>
           </div>
         ))}
@@ -140,7 +140,7 @@ function Upcoming() {
     </div>
     <div className="grid grid-cols-3 mt-4">
                 {overviewCards.map((e, i) => {
-                  return <Cards {...e} />;
+                  return <Cards {...e} key={i} />;
                 })}
               </div>
     </section>

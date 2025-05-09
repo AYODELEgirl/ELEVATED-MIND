@@ -8,7 +8,7 @@ import maleAvatar from "../../../../../assets/icons/overview/maleAvatar.png";
 import goldBadge from "../../../../../assets/icons/overview/goldBadge.png";
 import Reports from "@/app/components/Charts/Reports";
 
-function page() {
+function Page() {
   const [active, setActive] = useState(null);
   const handleClick = (index) => setActive(index);
 
@@ -334,4 +334,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

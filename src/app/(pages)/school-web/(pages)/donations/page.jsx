@@ -7,7 +7,7 @@ import Completed from "./(metrix)/Completed";
 import { CiSearch } from "react-icons/ci";
 import { FiCalendar } from "react-icons/fi";
 
-function page() {
+function Page() {
   const tabs = [{ name: "Ongoing Donation" }, { name: "Completed Donation" }];
   const [currentTab, setCurrentTab] = useState(tabs[0]?.name);
   return (
@@ -74,4 +74,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

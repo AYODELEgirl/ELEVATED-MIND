@@ -13,7 +13,7 @@ import Image from "next/image";
 
 import { useState } from "react";
 import Link from "next/link";
-function page() {
+function Page() {
   const headers = [
     {
       id: 1,
@@ -271,4 +271,4 @@ function page() {
     </div>
   );
 }
-export default page;
+export default Page;

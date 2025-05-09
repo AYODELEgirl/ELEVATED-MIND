@@ -407,7 +407,7 @@ export default function Random() {
                     }`}
                     onClick={() => setPayment(e?.icon)}
                   >
-                    <Image src={e.icon} />
+                    <Image src={e.icon}  alt=""/>
                     <p> {e.name}</p>
                   </div>
                 );

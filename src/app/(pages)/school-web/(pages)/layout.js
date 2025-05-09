@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useState } from "react";
 
-function layout({ children }) {
+function Layout({ children }) {
   const router = useRouter();
   console.log(window.location.pathname) 
   const handleStudentManagement = () => {
@@ -122,4 +122,4 @@ const [isAuthPage, setIsAuthPage] = useState(false);
   );
 }
 
-export default layout;
+export default Layout;
